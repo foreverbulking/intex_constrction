@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Contact Us | Intext Construction Ltd. — Get a Quote in Manitoba';
+const description = 'Contact Intext Construction for your next Manitoba build. Call 431-999-3129, email admin@intextconstruction.ca, or request a quote online.';
+---
+<Base title={title} description={description}>
+
+  <section class="section">
+    <div class="container contact-split">
+
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1 style="font-size:clamp(2.25rem, 5vw, 3.5rem);">Let's Build Something Together.</h1>
+        <p class="lead">Call, email, or send us the details below and we'll follow up with next steps.</p>
+
+        <a class="contact-tel" href="tel:+14319993129">431-999-3129</a>
+
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="1"/></svg>
+            <a href="mailto:admin@intextconstruction.ca">admin@intextconstruction.ca</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <address>39 Lloyd McKinnon Way</address>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a13 13 0 0 0 0 18 13 13 0 0 0 0-18z"/><path d="M3 12h18"/></svg>
+            <span>Serving Manitoba</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <form id="contact-form">
+          <div class="field">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="project-type">Project Type <span class="req">*</span></label>
+            <select id="project-type" name="project-type" required>
+              <option value="">Select one</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="industrial">Industrial</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project — scope, timeline, location."></textarea>
+          </div>
+          <button type="submit" class="btn btn-navy">
+            Send Message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="form-mockup-note">Submitting opens your email app</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--tight section--surface section--border-top">
+    <div class="container">
+      <div class="map-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <p><strong>39 Lloyd McKinnon Way</strong><br>Map embed placeholder — live map added at build time.</p>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<script>
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') ?? '');
+    const email = String(data.get('email') ?? '');
+    const phone = String(data.get('phone') ?? '');
+    const projectType = String(data.get('project-type') ?? '');
+    const message = String(data.get('message') ?? '');
+
+    const subject = `Project Inquiry — ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || 'Not provided'}`,
+      `Project Type: ${projectType}`,
+      '',
+      message,
+    ].join('\n');
+
+    window.location.href = `mailto:admin@intextconstruction.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

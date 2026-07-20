@@ -1,0 +1,23 @@
+---
+interface Props {
+  heading: string;
+  lead: string;
+  primaryLabel: string;
+}
+const { heading, lead, primaryLabel } = Astro.props;
+---
+<section class="section section--navy cta-band">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <h2>{heading}</h2>
+      <p class="lead">{lead}</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/contact">
+        {primaryLabel}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="tel:+14319993129">Call 431-999-3129</a>
+    </div>
+  </div>
+</section>

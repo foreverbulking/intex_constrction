@@ -1,0 +1,137 @@
+---
+import { Image, getImage } from 'astro:assets';
+import '../styles/global.css';
+import logo from '../assets/logo.png';
+import defaultOgImage from '../assets/hero-scaffolding-envelope.png';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: ImageMetadata;
+}
+
+const { title, description, ogImage = defaultOgImage } = Astro.props;
+const optimizedOgImage = await getImage({ src: ogImage });
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(optimizedOgImage.src, Astro.site);
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  name: 'Intext Construction Ltd.',
+  telephone: '+1-431-999-3129',
+  email: 'admin@intextconstruction.ca',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '39 Lloyd McKinnon Way',
+    addressRegion: 'MB',
+    addressCountry: 'CA',
+  },
+  areaServed: 'Manitoba',
+  foundingDate: '2017',
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={ogImageURL} />
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo-link" href="/" aria-label="Intext Construction Ltd. — Home">
+      <Image class="logo-img" src={logo} alt="Intext Construction Ltd. logo" width={162} height={125} loading="eager" />
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href;
+        return (
+          <a href={link.href} class={isActive ? 'is-active' : ''} aria-current={isActive ? 'page' : undefined}>{link.label}</a>
+        );
+      })}
+    </nav>
+    <a class="header-phone" href="tel:+14319993129">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>431-999-3129</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <slot />
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <Image class="logo-img" src={logo} alt="Intext Construction Ltd. logo" width={162} height={125} />
+      <p>Proudly Building Manitoba, Together. Registered &amp; insured general contractor serving residential, commercial, and industrial clients across Manitoba since 2017.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+14319993129">431-999-3129</a></li>
+        <li><a href="mailto:admin@intextconstruction.ca">admin@intextconstruction.ca</a></li>
+        <li><address>39 Lloyd McKinnon Way</address></li>
+        <li>Serving Manitoba</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Intext Construction Ltd. All rights reserved.</p>
+    <p>Registered &amp; Insured · SECOR Certification In Progress</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.getElementById('site-nav');
+  navToggle?.addEventListener('click', () => {
+    const open = siteNav?.classList.toggle('is-open');
+    navToggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

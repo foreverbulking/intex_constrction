@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import frontierExterior from '../assets/project-frontier-collegiate-exterior.jpg';
+import kfcInterior from '../assets/project-kfc-pembina-interior.jpg';
+import parapetRooftop from '../assets/project-parapet-rooftop.jpg';
+import macneillAdminOffice from '../assets/project-macneill-admin-office.jpg';
+import vestibuleDoor from '../assets/project-frontier-vestibule-door.jpg';
+import weldingShop from '../assets/project-frontier-collegiate-welding-shop.jpg';
+import cranberryRestroom from '../assets/project-cranberry-portage-restroom.jpg';
+import macneillInteriorRenovation from '../assets/project-macneill-interior-renovation.jpg';
+import mechanicalRoom from '../assets/project-frontier-mechanical-room.jpg';
+
+const title = 'Our Projects | Intext Construction Ltd. — Manitoba Portfolio';
+const description = 'See recent Intext Construction projects across Manitoba — commercial, institutional, and interior renovation work from schools to restaurants to office builds.';
+---
+<Base title={title} description={description}>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Projects</span>
+        <h1>Our Work Across Manitoba.</h1>
+        <p class="lead">A sample of institutional, commercial, and interior renovation work — from school building envelopes to restaurant fit-outs to office renovations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface section--border-top">
+    <div class="container">
+      <div class="masonry">
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={frontierExterior} alt="Frontier Collegiate brick exterior with building signage" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Institutional</span>
+            <span class="cap">Frontier Collegiate — Welding Shop, Building Envelope</span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={kfcInterior} alt="KFC Pembina restaurant counter and menu board after interior refresh" width={768} height={432} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Commercial</span>
+            <span class="cap">KFC Pembina — Interior Refresh, Floor &amp; Ceiling</span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={parapetRooftop} alt="Aerial view of rooftop HVAC and mechanical units during parapet construction" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Exterior</span>
+            <span class="cap">Cranberry Portage Exterior &amp; Interior Renovation — Parapet Construction<span class="draft-mark">*</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={macneillAdminOffice} alt="Renovated office reception desk with wood cabinetry" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Interior</span>
+            <span class="cap">École MacNeill — Administration Office Refresh<span class="draft-mark">*</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={vestibuleDoor} alt="Renovated entrance vestibule and replacement door" width={768} height={1024} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Exterior</span>
+            <span class="cap">Frontier School Division — Vestibule &amp; Door Replacement</span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={weldingShop} alt="Welding shop interior at Frontier Collegiate" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Institutional</span>
+            <span class="cap">Frontier Collegiate — Welding Shop Interior<span class="draft-mark">*</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={cranberryRestroom} alt="Renovated restroom with new sinks and stalls" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Interior</span>
+            <span class="cap">Cranberry Portage Exterior &amp; Interior Renovation — Interior Refresh, Wall &amp; Ceiling<span class="draft-mark">*</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={macneillInteriorRenovation} alt="Renovated office space with new desk and window" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Interior</span>
+            <span class="cap">École MacNeill — Interior Renovation<span class="draft-mark">*</span></span>
+          </figcaption>
+        </figure>
+
+        <figure class="masonry-item">
+          <a href="/contact">
+            <Image src={mechanicalRoom} alt="Mechanical and electrical panel room" width={768} height={576} loading="lazy" />
+          </a>
+          <figcaption>
+            <span class="cat">Institutional</span>
+            <span class="cap">Frontier School Division — Mechanical Room Upgrade<span class="draft-mark">*</span></span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="footnote">* Draft captions — to be confirmed with owner.</p>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Like what you see?"
+    lead="Let's talk about what we can build for you next."
+    primaryLabel="Start Your Project"
+  />
+
+</Base>

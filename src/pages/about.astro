@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import macneillAdminOffice from '../assets/project-macneill-admin-office.jpg';
+
+const title = 'About Us | Intext Construction Ltd. — Building Trust Since 2017';
+const description = "Registered & insured Manitoba general contractor est. 2017. Learn about Intext Construction's craftsmanship, safety, and integrity-driven approach to every project.";
+---
+<Base title={title} description={description}>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">About Intext Construction</span>
+        <h1>Building Trust. Constructing Excellence.</h1>
+        <p class="lead">Manitoba general contractor since 2017 — registered, insured, and built on craftsmanship, safety, and integrity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface section--border-top">
+    <div class="container hero-split" style="padding-block:0;">
+      <div class="hero-statement" style="padding-block:0; max-width:none;">
+        <span class="eyebrow">Our Story</span>
+        <h2>A Foundation Built on Experience</h2>
+        <p class="lead">Since 2017, Intext Construction Corporation has delivered reliable, high-quality construction services across residential, commercial, and industrial sectors. With a commitment to craftsmanship, safety, and integrity, we provide full-spectrum general contracting services tailored to your vision.</p>
+      </div>
+      <div class="hero-media">
+        <Image src={macneillAdminOffice} alt="Renovated office reception desk with wood cabinetry" width={768} height={576} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--border-top">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Stand For</span>
+        <h2>Our values</h2>
+      </div>
+      <div class="grid-3">
+        <div class="value-card">
+          <h3>Craftsmanship &amp; Quality</h3>
+          <p>We take pride in delivering top-tier construction services with precision and attention to detail. Every project, big or small, reflects our dedication to superior craftsmanship, ensuring durability and aesthetics that stand the test of time.</p>
+        </div>
+        <div class="value-card">
+          <h3>Safety &amp; Accountability</h3>
+          <p>The well-being of our team, clients, and community is our top priority. We adhere to strict safety standards and continuously strive for improvement, ensuring every worksite operates efficiently while minimizing risks.</p>
+        </div>
+        <div class="value-card">
+          <h3>Integrity &amp; Trust</h3>
+          <p>Honesty and transparency are the foundation of our business. We build lasting relationships through clear communication, fair practices, and a commitment to fulfilling promises — because your vision deserves a partner you can trust.</p>
+        </div>
+      </div>
+
+      <div class="credentials-row">
+        <div class="credential">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <h4>Registered &amp; Insured</h4>
+            <p>Fully registered and insured general contractor operating across Manitoba.</p>
+          </div>
+        </div>
+        <div class="credential">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+          <div>
+            <h4>SECOR Certification In Progress</h4>
+            <p>Pursuing SECOR certification as part of our ongoing commitment to safety standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface section--border-top">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Where We Work</span>
+        <h2>Serving Manitoba</h2>
+        <p class="lead">Based at 39 Lloyd McKinnon Way, Intext Construction takes on residential, commercial, and industrial projects across Manitoba.</p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Let's build something together."
+    lead="Reach out to discuss your project — we'd love to hear about it."
+    primaryLabel="Start Your Project"
+  />
+
+</Base>

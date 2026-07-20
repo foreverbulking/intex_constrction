@@ -1,0 +1,166 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import heroImage from '../assets/hero-scaffolding-envelope.png';
+import frontierExterior from '../assets/project-frontier-collegiate-exterior.jpg';
+import kfcInterior from '../assets/project-kfc-pembina-interior.jpg';
+import vestibuleDoor from '../assets/project-frontier-vestibule-door.jpg';
+
+const title = 'Intext Construction Ltd. | General Contractor in Manitoba';
+const description = "Manitoba general contractor since 2017. Residential, commercial & industrial construction — interior renovations, building envelope, and full-service project management. Registered & insured.";
+---
+<Base title={title} description={description}>
+
+  <section class="hero-split container">
+    <div class="hero-statement">
+      <span class="eyebrow">Manitoba General Contractor · Est. 2017</span>
+      <h1>Proudly Building Manitoba, Together.</h1>
+      <p class="lead">Full-spectrum general contracting for residential, commercial, and industrial projects — from building envelope and interior renovations to ground-up project management. Registered, insured, and built on craftsmanship, safety, and integrity.</p>
+      <p class="trust-strip">
+        <span>Est. 2017</span><span class="sep" aria-hidden="true">·</span>
+        <span>Registered &amp; Insured</span><span class="sep" aria-hidden="true">·</span>
+        <span>SECOR Certification In Progress</span>
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/contact">
+          Start Your Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="/projects">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <Image src={heroImage} alt="Scaffolding and building envelope work on a glass-front commercial building" width={768} height={768} loading="eager" />
+    </div>
+  </section>
+
+  <section class="section section--surface section--border-top" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Full-spectrum construction services</h2>
+        <p>One contractor for the whole scope — from building envelope to final finishes — across Manitoba's residential, commercial, and industrial sectors.</p>
+      </div>
+      <div class="grid-3">
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="6" rx="1"/><line x1="8" y1="10" x2="8" y2="15"/><rect x="6" y="15" width="4" height="5" rx="1"/></svg>
+          </div>
+          <h3>Interior Renovations</h3>
+          <p>Flooring, walls, ceilings, and finishes — refreshed or rebuilt to last.</p>
+          <a class="btn-link" href="/services#interior-renovations">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="10" y2="21"/></svg>
+          </div>
+          <h3>Exterior &amp; Building Envelope</h3>
+          <p>Envelope repair, wall openings, and weatherproofing that protects the structure.</p>
+          <a class="btn-link" href="/services#exterior-envelope">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+          </div>
+          <h3>Flooring, Walls &amp; Ceilings</h3>
+          <p>Precision finishing work across every surface, residential to institutional.</p>
+          <a class="btn-link" href="/services#flooring-walls-ceilings">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="1"/><circle cx="15" cy="12" r="1"/></svg>
+          </div>
+          <h3>Doors &amp; Windows</h3>
+          <p>Replacement, flashing, and vestibule work that seals out the Manitoba weather.</p>
+          <a class="btn-link" href="/services#doors-windows">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M5 20V10h3V7h2v3h4V6h2v4h3v10"/></svg>
+          </div>
+          <h3>Parapet Construction</h3>
+          <p>Rooftop parapet and building-edge construction built to code.</p>
+          <a class="btn-link" href="/services#parapet-construction">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg>
+          </div>
+          <h3>General Contracting &amp; PM</h3>
+          <p>One point of contact from consult to handover, on schedule and on budget.</p>
+          <a class="btn-link" href="/services#general-contracting">Learn more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--border-top" id="featured-projects">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Recent Work</span>
+        <h2>Featured projects</h2>
+        <p>A sample of institutional, commercial, and interior work completed across Manitoba.</p>
+      </div>
+      <div class="feature-grid">
+
+        <a class="feature-card" href="/projects">
+          <figure>
+            <Image src={frontierExterior} alt="Frontier Collegiate brick exterior with building signage" width={768} height={576} />
+          </figure>
+          <figcaption>
+            <span class="cat">Institutional</span>
+            <span class="cap">Frontier Collegiate — Welding Shop, Building Envelope</span>
+          </figcaption>
+        </a>
+
+        <a class="feature-card" href="/projects">
+          <figure>
+            <Image src={kfcInterior} alt="KFC Pembina restaurant counter and menu board after interior refresh" width={768} height={432} />
+          </figure>
+          <figcaption>
+            <span class="cat">Commercial</span>
+            <span class="cap">KFC Pembina — Interior Refresh, Floor &amp; Ceiling</span>
+          </figcaption>
+        </a>
+
+        <a class="feature-card" href="/projects">
+          <figure>
+            <Image src={vestibuleDoor} alt="Renovated entrance vestibule and replacement door" width={768} height={1024} />
+          </figure>
+          <figcaption>
+            <span class="cat">Exterior</span>
+            <span class="cap">Frontier School Division — Vestibule &amp; Door Replacement</span>
+          </figcaption>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Ready to start your project?"
+    lead="Tell us about your scope and timeline — we'll follow up with next steps."
+    primaryLabel="Get a Free Quote"
+  />
+
+</Base>
