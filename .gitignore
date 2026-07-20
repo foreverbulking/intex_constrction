@@ -26,3 +26,4 @@ agent.config.js
 
 # vercel
 .vercel/
+.vercel

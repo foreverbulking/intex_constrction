@@ -2,6 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import '../styles/global.css';
 import logo from '../assets/logo.png';
+import logoWhite from '../assets/logo-white.png';
 import defaultOgImage from '../assets/hero-scaffolding-envelope.png';
 
 interface Props {
@@ -96,7 +97,7 @@ const localBusinessSchema = {
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <Image class="logo-img" src={logo} alt="Intext Construction Ltd. logo" width={162} height={125} />
+      <Image class="logo-img" src={logoWhite} alt="Intext Construction Ltd. logo" width={162} height={125} />
       <p>Proudly Building Manitoba, Together. Registered &amp; insured general contractor serving residential, commercial, and industrial clients across Manitoba since 2017.</p>
     </div>
     <div class="footer-col">
